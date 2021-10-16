@@ -14,9 +14,7 @@ import java.util.Objects;
  */
 public class Medico {
     
-    private Date localDate() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+  
             private static long serial;
         private int id;
         private String nome;
@@ -104,7 +102,6 @@ public class Medico {
             this.senha = senha;
         }
         
-        final Date data = localDate();
         
 
          @Override

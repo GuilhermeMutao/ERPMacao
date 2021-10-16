@@ -4,50 +4,75 @@
  * and open the template in the editor.
  */
 package trab;
+import java.util.Scanner;
 
 
 import com.sun.xml.internal.fastinfoset.tools.StAX2SAXReader;
+import java.math.BigDecimal;
 import java.util.Scanner;
+
 
 /**
  *
  * @author GuiGu
  */
 public class Menu {
-    Administrador[] administradores = new Administrador[5];
+   
+   AdministradorDAO administradorDAO = new AdministradorDAO();
+   MedicoDAO medicoDAO = new MedicoDAO();
+   HospitalDAO hospitalDAO = new HospitalDAO();
+   Scanner s = new Scanner(System.in);
     
-    Scanner s = new Scanner(System.in);
-    
-    public Menu(){
-     int opcaoMenu;
-        do{
-        opcaoMenu = menu();
+
+     
+   public Menu(){
+     int opcaoMenu = 10;
+        while (opcaoMenu != 4) {
+            
+        
+            opcaoMenu = this.menu();
+            
             switch (opcaoMenu) {
                 case 1:
-                    Administrador a = criaAdministrador();
-
-                    boolean jogadorFoiInserido = adiciona(a);
-                    if (jogadorFoiInserido) {
+                    Administrador a = this.criaAdministrador();
+                    if (administradorDAO.adiciona(a)) {
                         System.out.println("Admnistrador inserido com sucesso");
                     } else {
-                        System.out.println("Admnistrador nao inserido");
-
+                        System.out.println("Array cheio");
                     }
                     break;
 
-                
-            }
-        }while (opcaoMenu != 4);
+                case 2:
+                    Medico m = this.criaMedico();
+                    if (medicoDAO.adiciona(m)) {
+                        System.out.println("Medico inserido com sucesso");
+                    } else {
+                        System.out.println("Array cheio");
+                    }
+                    break;
+                    
+                case 3:
+                    Hospital h = this.criaHospital();
+                    if (hospitalDAO.adiciona(h)) {
+                        System.out.println("medico inserido com sucesso");
+                    } else {
+                        System.out.println("Array cheio");
+                    }
+                    break;
     
-}
-    public static void main(String[] args){
-        new Menu();    
-    }
+            }
+          }
+   }
+
+  public static void main(String[] args){
+        new Menu();
+    } 
+    
     private int menu(){
-        System.out.println("==========================");
-        System.out.println(" ERP PARA HOSPITAIS MACÃO - Cadastro");
-        System.out.println("==========================");
-        System.out.println("Você é");
+        System.out.println("======================================");
+        System.out.println(" ERP PARA HOSPITAIS MACÃO - Cadastro" );
+        System.out.println("======================================");
+        System.out.println("Você ira cadastrar um: ");
         System.out.println("1 - Administrador");
         System.out.println("2 - Médico");
         System.out.println("3 - Hospital");
@@ -57,39 +82,66 @@ public class Menu {
         int  opcao = Integer.parseInt(scanner.nextLine());
         return opcao;
 }
-     boolean adiciona(Administrador a) {
-        int proximaPosicaoLivre = this.proximaPosicaoLivre();
-        if (proximaPosicaoLivre != -1) {
-            administradores[proximaPosicaoLivre] = a;
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-    private Administrador criaAdministrador() {
+   
+    
+    
+    public Administrador criaAdministrador() {
         Administrador a = new Administrador();
+
+        System.out.println("nome: ");
+        a.setNome(s.nextLine());
+        
         System.out.println("CPF: ");
-        String CPF = s.nextLine();
-        a.setCPF(CPF);
-        System.out.println("Nome: ");
-        String nome = s.nextLine();
-        a.setNome(nome);
+        a.setCPF(s.nextLine());
+        
+        System.out.println("Endereco: ");
+        a.setEndereco(s.nextLine());
+        
+        System.out.println("Login: ");
+        a.setLogin(s.nextLine());
+        
+        System.out.println("Senha: ");
+        a.setSenha(s.nextLine());
+        
         return a;
     }
-    
-    private int proximaPosicaoLivre() {
-        for (int i = 0; i < administradores.length; i++) {
-            if (administradores[i] == null) {
-                return i;
-            }
+   
+    public Medico criaMedico() {
+        Medico m = new Medico();
 
-        }
-        return -1;
-
+        System.out.println("nome: ");
+        m.setNome(s.nextLine());
+        
+        System.out.println("CPF: ");
+        m.setCPF(s.nextLine());
+        
+        System.out.println("Endereco: ");
+        m.setEndereco(s.nextLine());
+        
+        System.out.println("Login: ");
+        m.setLogin(s.nextLine());
+        
+        System.out.println("Senha: ");
+        m.setSenha(s.nextLine());
+        
+        return m;
     }
+    
+    public Hospital criaHospital() {
+        Hospital m = new Hospital();
 
+        System.out.println("nome: ");
+        m.setNome(s.nextLine());
+        
+        System.out.println("Endereco: ");
+        m.setEndereco(s.nextLine());
+       
+        
+        return m;
+    }
+    
 }
+    
 
 
 

@@ -13,9 +13,6 @@ import java.util.Objects;
  */
 public class Hospital {
     
-    private Date localDate() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
             private static long serial;
         private int id;
         private String nome;
@@ -79,7 +76,6 @@ public class Hospital {
             this.CNPJ = CNPJ;
         }
         
-        final Date data = localDate();
         
         public Date getDataM (Date dataM) {
             return dataM;
