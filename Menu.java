@@ -88,7 +88,7 @@ public class Menu {
     public Administrador criaAdministrador() {
         Administrador a = new Administrador();
 
-        System.out.println("nome: ");
+        System.out.println("Nome: ");
         a.setNome(s.nextLine());
         
         System.out.println("CPF: ");
@@ -109,7 +109,7 @@ public class Menu {
     public Medico criaMedico() {
         Medico m = new Medico();
 
-        System.out.println("nome: ");
+        System.out.println("Nome: ");
         m.setNome(s.nextLine());
         
         System.out.println("CPF: ");
@@ -118,11 +118,16 @@ public class Menu {
         System.out.println("Endereco: ");
         m.setEndereco(s.nextLine());
         
+        System.out.println("Telefone: ");
+        m.setTelefone(s.nextLine());
+        
         System.out.println("Login: ");
         m.setLogin(s.nextLine());
         
         System.out.println("Senha: ");
         m.setSenha(s.nextLine());
+        
+        
         
         return m;
     }
@@ -130,8 +135,20 @@ public class Menu {
     public Hospital criaHospital() {
         Hospital m = new Hospital();
 
-        System.out.println("nome: ");
+        System.out.println("Nome: ");
         m.setNome(s.nextLine());
+        
+        System.out.println("Abreviação: ");
+        m.setAbrv(s.nextLine());
+        
+        System.out.println("Cidade: ");
+        m.setCidade(s.nextLine());
+        
+        System.out.println("CNPJ: ");
+        m.setCNPJ(s.nextLine());
+        
+        System.out.println("Telefone: ");
+        m.setTelefone(s.nextLine());
         
         System.out.println("Endereco: ");
         m.setEndereco(s.nextLine());

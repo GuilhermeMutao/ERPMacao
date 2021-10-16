@@ -20,7 +20,7 @@ public class Hospital {
         private String cidade;
         private String endereco;
         private String CNPJ;
-        private int Tel;
+        private String Tel;
         private Date dataM;
         
         public Hospital () {
@@ -57,6 +57,14 @@ public class Hospital {
         
         public void setCidade (String Cidade) {
             this.cidade = cidade;
+        }
+        
+        public String getTelefone (String telefone) {
+            return Tel;
+        }
+        
+        public void setTelefone (String Tel) {
+            this.Tel = Tel;
         }
          
           public String getEndereco (String endereco) {

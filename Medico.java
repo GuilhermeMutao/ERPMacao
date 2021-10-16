@@ -20,7 +20,7 @@ public class Medico {
         private String nome;
         private String endereco;
         private String CPF;
-        private int Tel;
+        private String Tel;
         private String espec;
         private String login;
         private String senha;
@@ -66,11 +66,11 @@ public class Medico {
         }
         
         
-        public int getTelefone (int telefone) {
+        public String getTelefone (String telefone) {
             return Tel;
         }
         
-        public void setTelefone (int Tel) {
+        public void setTelefone (String Tel) {
             this.Tel = Tel;
         }
         
