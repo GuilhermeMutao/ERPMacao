@@ -5,8 +5,8 @@
  */
 package trab;
 
-import java.util.Date;
 import java.util.Objects;
+import java.time.LocalDate;
 
 /**
  *
@@ -17,8 +17,8 @@ public class Administrador {
     private long id;
     private String nome;
     private String CPF;
-    private Date dataCriacao;
-    private Date dataModificacao;
+    private LocalDate dataCriacao;
+    private LocalDate dataModificacao;
     private String endereco;
     private String login;
     private String senha;
@@ -49,19 +49,19 @@ public class Administrador {
         this.CPF = CPF;
     }
 
-    public Date getDataCriacao() {
+    public LocalDate getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(Date dataCriacao) {
+    public void setDataCriacao(LocalDate dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
-    public Date getDataModificacao() {
+    public LocalDate getDataModificacao() {
         return dataModificacao;
     }
 
-    public void DataModificacao(Date telefoneCelular) {
+    public void DataModificacao(LocalDate telefoneCelular) {
         this.dataModificacao = telefoneCelular;
     }
 
@@ -91,7 +91,12 @@ public class Administrador {
 
     @Override
     public String toString() {
-        return "Este e o jogador " + this.nome + " COM CPF" + this.CPF;
+        return "Administrador(a): " + this.nome + 
+                "\nCPF: " + this.CPF + 
+                "\nEndereço: " + this.endereco +
+                "\nLogin: " + this.login +
+                "\nSenha: " + this.senha +
+                "\nCriado em: " + this.dataCriacao;
     }
 
     @Override

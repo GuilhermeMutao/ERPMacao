@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */package trab;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -21,7 +22,8 @@ public class Hospital {
         private String endereco;
         private String CNPJ;
         private String Tel;
-        private Date dataM;
+        private LocalDate dataCriacao;
+        private LocalDate dataModificacao;
         
         public Hospital () {
             
@@ -85,18 +87,31 @@ public class Hospital {
         }
         
         
-        public Date getDataM (Date dataM) {
-            return dataM;
-        }
-        
-        public void setDataM    (Date dataM) {
-            this.dataM = dataM;
-        }
-        
+         public LocalDate getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDate dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public LocalDate getDataModificacao() {
+        return dataModificacao;
+    }
+
+    public void DataModificacao(LocalDate telefoneCelular) {
+        this.dataModificacao = telefoneCelular;
+    }
 
          @Override
     public String toString() {
-        return "Este eh o hospital " + this.nome + " COM CNPJ" + this.CNPJ;
+       return "Administrador(a): " + this.nome + 
+              "\nAbreviação: " + this.abrv + 
+              "\nCidade: " + this.cidade +
+              "\nCNPJ: " + this.CNPJ +
+              "\nTel: " + this.Tel +
+              "\nEnderaço: " + this.Tel +
+              "\nCriado em: " + this.dataCriacao;
     }
 
     @Override

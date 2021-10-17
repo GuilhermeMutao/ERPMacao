@@ -5,6 +5,8 @@
  */
 package trab;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author GuiGu
@@ -15,9 +17,18 @@ public class MedicoDAO {
     
     public MedicoDAO() {
     Medico m1 = new Medico();
-    m1.setNome("Macao");
+    m1.setNome("Ana Laura Bahia Mutão");
+    m1.setCPF("020.271.908-32");
+    m1.setEspec("Psicanalista");
+    m1.setEndereco("Rua 8 casa 27, Condominio Dhamma II");
+    m1.setTelefone("(00)98765-4321");
+    m1.setLogin("AnaBahia");
+    m1.setSenha("mutaolindo");
         this.adiciona(m1);
+        
+    m1.setDataCriacao(LocalDate.now());
     }
+
     
      
     boolean adiciona(Medico m) {
@@ -30,7 +41,7 @@ public class MedicoDAO {
         }
 
     }
-     private int proximaPosicaoLivre() {
+    private int proximaPosicaoLivre() {
         for (int i = 0; i < medicos.length; i++) {
             if (medicos[i] == null) {
                 return i;
@@ -39,5 +50,13 @@ public class MedicoDAO {
         }
         return -1;
 
+    }
+    
+    public void listar() {
+        for (int i = 0; i < medicos.length; i++) {
+            if (medicos[i] != null) {
+                System.out.println(medicos[i]);
+            }
+        }
     }
 }

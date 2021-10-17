@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package trab;
+import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.Date;
 
@@ -19,6 +20,11 @@ public class AdministradorDAO {
     public AdministradorDAO() {
     Administrador a1 = new Administrador();
     a1.setNome("Macao");
+    a1.setCPF("027.128.132-51");
+    a1.setEndereco("Rua Macao 228, Bairro Macão");
+    a1.setLogin("Macao");
+    a1.setSenha("macao123");
+    a1.setDataCriacao(LocalDate.now());
         this.adiciona(a1);
     }
     
@@ -44,6 +50,13 @@ public class AdministradorDAO {
 
     }
     
+     public void listar() {
+        for (int i = 0; i < administradores.length; i++) {
+            if (administradores[i] != null) {
+                System.out.println(administradores[i]);
+            }
+        }
+    }
 }
 
 

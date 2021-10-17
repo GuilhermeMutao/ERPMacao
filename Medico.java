@@ -5,6 +5,7 @@
  */
 package trab;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -24,7 +25,9 @@ public class Medico {
         private String espec;
         private String login;
         private String senha;
-        private Date dataM;
+        private LocalDate dataCriacao;
+        private LocalDate dataModificacao;
+        
         
         public Medico () {
             
@@ -34,9 +37,7 @@ public class Medico {
         public long getId() {
             return id;
         }
-        
-        
-        
+               
          public String getNome() {
          return nome;
          
@@ -65,8 +66,7 @@ public class Medico {
             this.CPF = CPF;
         }
         
-        
-        public String getTelefone (String telefone) {
+        public String getTelefone (String Tel) {
             return Tel;
         }
         
@@ -102,11 +102,33 @@ public class Medico {
             this.senha = senha;
         }
         
+         public LocalDate getDataCriacao() {
+        return dataCriacao;
+        }
+
+        public void setDataCriacao(LocalDate dataCriacao) {
+            this.dataCriacao = dataCriacao;
+        }
+
+        public LocalDate getDataModificacao() {
+            return dataModificacao;
+        }
+
+        public void DataModificacao(LocalDate telefoneCelular) {
+            this.dataModificacao = telefoneCelular;
+        }
         
 
          @Override
     public String toString() {
-        return "Este eh o medico " + this.nome + " COM CPF" + this.CPF;
+       return "Médico(a): " + this.nome + 
+              "\nCPF: " + this.CPF +
+              "\nEspecialização: " + this.espec +
+              "\nEndereço: " + this.endereco +
+              "\nTelefone: " + this.Tel +
+              "\nLogin: " + this.login +
+              "\nSenha: " + this.senha +
+              "\nCriado em: " + this.dataCriacao;
     }
 
     @Override
