@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package trab;
-
+import trab.Plantoes;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -14,10 +14,11 @@ import java.util.Scanner;
  */
 public class CadastroPlantoes {
     
-      CadastroPlantoes[] cadasttro = new CadastroPlantoes [30];
+      CadastroPlantoes[] cadastro = new CadastroPlantoes [30];
     
     public CadastroPlantoes() {
     
+        int flag = 0;
         System.out.println("Digite o nome do hospital...: ");
         Scanner hospital = new Scanner(System.in);
         System.out.println("Digite um medico para alocar ao "
@@ -25,15 +26,20 @@ public class CadastroPlantoes {
         Scanner medicoA = new Scanner(System.in);
         System.out.println("Digite uma data...: ");
         Scanner data = new Scanner(System.in);
+        System.out.println("Digite um periodo para o plantao...: ");
+        Scanner periodo = new Scanner (System.in);
         System.out.println("Digite um tipo de plantao...: ");
         Scanner tipo = new Scanner(System.in);
+        System.out.println("O medico " + medicoA + "do hospital " 
+                + hospital + "devera estar de plantao na data"
+                    + data + "No periodo...:" + periodo + "Para o " + tipo);
     }
     
      
-    boolean adiciona(Hospital h) {
+    boolean adiciona(CadastroPlantoes c) {
         int proximaPosicaoLivre = this.proximaPosicaoLivre();
         if (proximaPosicaoLivre != -1) {
-            hospitais[proximaPosicaoLivre] = h;
+           cadastro[proximaPosicaoLivre] = c;
             return true;
         } else {
             return false;
@@ -41,8 +47,8 @@ public class CadastroPlantoes {
 
     }
      private int proximaPosicaoLivre() {
-        for (int i = 0; i < hospitais.length; i++) {
-            if (hospitais[i] == null) {
+        for (int i = 0; i < cadastro.length; i++) {
+            if (cadastro[i] == null) {
                 return i;
             }
 
@@ -51,9 +57,9 @@ public class CadastroPlantoes {
     }
      
     public void listar() {
-        for (int i = 0; i < hospitais.length; i++) {
-            if (hospitais[i] != null) {
-                System.out.println(hospitais[i]);
+        for (int i = 0; i < cadastro.length; i++) {
+            if (cadastro[i] != null) {
+                System.out.println(cadastro[i]);
             }
         }
     }

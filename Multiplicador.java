@@ -38,7 +38,7 @@ public class Multiplicador {
         }
         
         public void setTipo (String Tipo) {
-            this.tipo = tipo;
+            this.tipo = Tipo;
         }
         
         public String getEstado () {
@@ -46,7 +46,7 @@ public class Multiplicador {
         }
         
         public void setEstado (String Estado) {
-            this.estado = estado;
+            this.estado = Estado;
         }
         
         public double setValor () {
