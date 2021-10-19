@@ -5,6 +5,7 @@
  */
 package trab;
 
+import java.math.BigDecimal;  
 import java.util.Date;
 import java.util.Objects;
 /**
@@ -16,9 +17,9 @@ public class Multiplicador {
          private int id;
          private Date dataI;
          private Date dataT;
-         private String tipo;
+         String tipo;
          private String estado;
-         private double valor;
+         double valor;
          private Date dataC;
          private Date dataM;
          
@@ -48,11 +49,11 @@ public class Multiplicador {
             this.estado = estado;
         }
         
-        public double valor () {
+        public double setValor () {
             return valor;
         }
         
-        public void valor (double valor) {
+        public void getvalor (double valor) {
             this.valor = valor;
         }
 }
