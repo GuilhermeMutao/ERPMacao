@@ -55,7 +55,7 @@ public class Menu {
                 case 3:
                     Hospital h = this.criaHospital();
                     if (hospitalDAO.adiciona(h)) {
-                        System.out.println("medico inserido com sucesso");
+                        System.out.println("Hospital inserido com sucesso");
                     } else {
                         System.out.println("Array cheio");
                     }
