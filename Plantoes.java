@@ -2,6 +2,7 @@ package trab;
 
 import java.util.Date;
 import java.util.Objects;
+import java.util.package;
 
 /**
  *
@@ -11,7 +12,7 @@ public class Plantoes {
     
            private static long serial;
         private int id;
-        private String hospital;
+        String hospital;
         private Date dataI;
         private Date dataT;
         private String periodo;
@@ -31,13 +32,15 @@ public class Plantoes {
             return id;
         }
         
-        
+           
          public String getHospital() {
          return hospital;
          
          }
+         
         
-         public void setNome(String nome) {
+        
+         public void setHospital(String hospital) {
              this.hospital = hospital;
          }
          
