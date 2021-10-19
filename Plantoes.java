@@ -2,7 +2,7 @@ package trab;
 
 import java.util.Date;
 import java.util.Objects;
-import java.util.package;
+
 
 /**
  *
@@ -13,8 +13,8 @@ public class Plantoes {
            private static long serial;
         private int id;
         String hospital;
-        private Date dataI;
-        private Date dataT;
+        private String dataI;
+        private String dataT;
         private String periodo;
         private String tipoPlantao;
         private String medicoAlocado;
@@ -58,8 +58,8 @@ public class Plantoes {
         }
        
         
-        public void setTipo () {
-            this.tipoPlantao = tipoPlantao;
+        public void setTipo (String TipoP) {
+            this.tipoPlantao = TipoP;
         }
         
          public String getMedicoR () {
@@ -67,7 +67,7 @@ public class Plantoes {
         }
         
         public void setMedicoR (String MedicoR) {
-            this.medicoRealizou = medicoRealizou;
+            this.medicoRealizou = MedicoR;
         }
         
         public double getValorB () {
@@ -75,9 +75,31 @@ public class Plantoes {
         }
         
         public void setValorB (double ValorB) {
-            this.valorB = valorB;
+            this.valorB = ValorB;
+        }
+        public String getDataI () {
+            return dataI;
+        }
+        public void setDataI (String DataI) {
+            this.dataI = DataI;
         }
         
+        public String getDataT () {
+            return dataT;
+           
+        }
+        
+        public void setDataT (String DataT) {
+            this.dataT = DataT;
+        }
+
+    void dataI(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void dataT(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     }
    
