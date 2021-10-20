@@ -39,7 +39,7 @@ public class Menu {
                     if (administradorDAO.adiciona(a)) {
                         System.out.println("Admnistrador inserido com sucesso");
                     } else {
-                        System.out.println("Array cheio");
+                        System.out.println("Número máximo de admnistradores inserido!");
                     }
                     break;
 
@@ -48,7 +48,7 @@ public class Menu {
                     if (medicoDAO.adiciona(m)) {
                         System.out.println("Medico inserido com sucesso");
                     } else {
-                        System.out.println("Array cheio");
+                        System.out.println("Número máximo de médicos inserido!");
                     }
                     break;
                     
@@ -57,7 +57,7 @@ public class Menu {
                     if (hospitalDAO.adiciona(h)) {
                         System.out.println("Hospital inserido com sucesso");
                     } else {
-                        System.out.println("Array cheio");
+                        System.out.println("Número máximo de hospitais inserido!");
                     }
                     break;
                 case 4:
@@ -67,7 +67,7 @@ public class Menu {
                     medicoDAO.listar();
                     break;
                 case 6:
-                    medicoDAO.listar();
+                    hospitalDAO.listar();
                     break;
             }
           }
@@ -78,9 +78,9 @@ public class Menu {
     } 
     
     private int menu(){
-        System.out.println("======================================");
-        System.out.println(" ERP PARA HOSPITAIS MACÃO - Cadastro" );
-        System.out.println("======================================");
+        System.out.println("=========================================");
+        System.out.println(" ERP PARA HOSPITAIS MACÃO - Admnistrador" );
+        System.out.println("=========================================");
         System.out.println("Escolha um: ");
         System.out.println("1 - Cadastrar administrador");
         System.out.println("2 - Cadastrar médico");

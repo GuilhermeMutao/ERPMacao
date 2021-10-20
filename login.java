@@ -24,12 +24,23 @@ public class login {
             switch (opcaoLogin) {
                 case 1:
                     System.out.println("Informe seu Login");
-                    loginaux = s.nextLine();
+                    String loginaux = s.nextLine();
+                    System.out.println("Bem vindo " + loginaux + "!");
+                    new Menu();
+                    
                 break;
-      
+                
+                case 2:
+                    System.out.println("Informe seu Login");
+                    String loginaux2 = s.nextLine();
+                    System.out.println("Bem vindo " + loginaux2 + "!");
+                    new MenuMedico();
+     
+                break;
             }
         }
     }
+     
     public static void main(String[] args){
         new login();
     }

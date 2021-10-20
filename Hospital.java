@@ -49,7 +49,7 @@ public class Hospital {
             return abrv;
         }
         
-        public void setAbrv(String Abrv) {
+        public void setAbrv(String abrv) {
             this.abrv = abrv;
         }
          
@@ -57,11 +57,11 @@ public class Hospital {
             return cidade;
         }
         
-        public void setCidade (String Cidade) {
+        public void setCidade (String cidade) {
             this.cidade = cidade;
         }
         
-        public String getTelefone (String telefone) {
+        public String getTelefone () {
             return Tel;
         }
         
