@@ -13,7 +13,7 @@ package trab;
 public class MultiplicadorDAO {
   
      
-    Multiplicador [] Multi = new Multiplicador[5];
+    Multiplicador [] mult = new Multiplicador[5];
     
     public MultiplicadorDAO() {
     Multiplicador m1 = new Multiplicador();
@@ -50,8 +50,24 @@ public class MultiplicadorDAO {
 
 }
 
-    private void adiciona(Multiplicador m1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   boolean adiciona(Multiplicador m) {
+        int proximaPosicaoLivre = this.proximaPosicaoLivre();
+        if (proximaPosicaoLivre != -1) {
+            mult[proximaPosicaoLivre] = m;
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+     private int proximaPosicaoLivre() {
+        for (int i = 0; i < mult.length; i++) {
+            if (mult[i] == null) {
+                return i;
+            }
+
+        }
+        return -1;
     }
 }
 

@@ -91,7 +91,7 @@ public class Administrador {
 
     @Override
     public String toString() {
-        return "Administrador(a): " + this.nome + 
+        return "\nAdministrador(a): " + this.nome + 
                 "\nCPF: " + this.CPF + 
                 "\nEndereço: " + this.endereco +
                 "\nLogin: " + this.login +

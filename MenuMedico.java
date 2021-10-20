@@ -16,6 +16,7 @@ import java.util.Scanner;
 public class MenuMedico {
     
     HospitalDAO hospitalDAO = new HospitalDAO();
+    CadastroPlantoesDAO cadastroPlantoesDAO = new CadastroPlantoesDAO();
     Scanner s = new Scanner(System.in);
      
     public MenuMedico(){
@@ -37,6 +38,18 @@ public class MenuMedico {
                 case 2:
                     hospitalDAO.listar();
                     break;
+                case 3:
+                    Plantoes p = this.CadastroPlantoes();
+                    if (cadastroPlantoesDAO.adiciona(p)) {
+                        System.out.println("Admnistrador inserido com sucesso");
+                    } else {
+                        System.out.println("Número máximo de admnistradores inserido!");
+                    }
+                   break;
+                   
+                case 4:
+                    cadastroPlantoesDAO.listar();
+                   break;
             }
           }
    }
@@ -47,6 +60,8 @@ public class MenuMedico {
         System.out.println("Escolha um: ");
         System.out.println("1 - Cadastrar hospital");
         System.out.println("2 - Listar hospitais");
+        System.out.println("3 - Cadastrar plantão");
+        System.out.println("4 - Listar Plantões");
         System.out.println("0 - Sair");
         System.out.print("Qual Sua opção ? R: ");
         Scanner scanner = new Scanner(System.in);
@@ -82,5 +97,32 @@ public class MenuMedico {
         h.setDataCriacao(LocalDate.now());
         
         return h;
+    }
+    
+    public Plantoes CadastroPlantoes() {
+        
+        
+        
+        Plantoes p = new Plantoes();
+        
+        
+  
+        System.out.println("Digite o nome do hospital: ");
+        p.setHospital(s.nextLine());
+        
+        System.out.println("Digite um medico para alocar ao plantao: ");    
+        p.setMedicoAlocado(s.nextLine());
+     
+        System.out.println("Digite uma data: ");
+        p.setDataI(s.nextLine());
+        
+        System.out.println("Digite um periodo para o plantao: ");
+        p.setPeriodo(s.nextLine());
+        
+        System.out.println("Digite um tipo de plantao: ");
+        p.setTipo(s.nextLine());
+        
+        
+        return p;
     }
 }

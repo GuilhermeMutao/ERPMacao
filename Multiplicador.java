@@ -17,7 +17,7 @@ public class Multiplicador {
          private int id;
          private Date dataI;
          private Date dataT;
-         String tipo;
+         private String tipo;
          private String estado;
          double valor;
          private Date dataC;

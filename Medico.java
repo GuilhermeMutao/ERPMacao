@@ -121,7 +121,7 @@ public class Medico {
 
          @Override
     public String toString() {
-       return "Médico(a): " + this.nome + 
+       return "\nMédico(a): " + this.nome + 
               "\nCPF: " + this.CPF +
               "\nEspecialização: " + this.espec +
               "\nEndereço: " + this.endereco +

@@ -12,7 +12,7 @@ public class Plantoes {
     
            private static long serial;
         private int id;
-        String hospital;
+        private String hospital;
         private String dataI;
         private String dataT;
         private String periodo;
@@ -37,9 +37,7 @@ public class Plantoes {
          return hospital;
          
          }
-         
-        
-        
+             
          public void setHospital(String hospital) {
              this.hospital = hospital;
          }
@@ -62,12 +60,20 @@ public class Plantoes {
             this.tipoPlantao = TipoP;
         }
         
+        public String getMedicoAlocado () {
+            return medicoAlocado;
+        }
+        
+        public void setMedicoAlocado (String medicoAlocado) {
+            this.medicoAlocado = medicoAlocado;
+        }
+        
          public String getMedicoR () {
             return medicoRealizou;
         }
         
-        public void setMedicoR (String MedicoR) {
-            this.medicoRealizou = MedicoR;
+        public void setMedicoR (String medicoR) {
+            this.medicoRealizou = medicoR;
         }
         
         public double getValorB () {
@@ -93,13 +99,15 @@ public class Plantoes {
             this.dataT = DataT;
         }
 
-    void dataI(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void dataT(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        @Override
+        public String toString() {
+            return "\nHospital: " + this.hospital + 
+                    "\nMédico alocado: " + this.medicoAlocado + 
+                    "\nData inicial: " + this.dataI +
+                    "\nPeriodo: " + this.periodo +
+                    "\nTipo: " + this.tipoPlantao;
+                   
+        }
 
     }
    

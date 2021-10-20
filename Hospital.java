@@ -5,7 +5,6 @@
  */package trab;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -105,7 +104,7 @@ public class Hospital {
 
          @Override
     public String toString() {
-       return "Administrador(a): " + this.nome + 
+       return "\nHospital: " + this.nome + 
               "\nAbreviação: " + this.abrv + 
               "\nCidade: " + this.cidade +
               "\nCNPJ: " + this.CNPJ +

@@ -13,11 +13,11 @@ import com.sun.xml.internal.fastinfoset.tools.StAX2SAXReader;
  */
 public class plantoesI {
        
-      
+      Plantoes [] plantao = new Plantoes[5]; 
        
        public plantoesI(String Hospital, String medicoRealizou,
                String tipoPlantao, String periodo, Double valorB ) {
-         Plantoes plantao = new Plantoes(); 
+         
          
          System.out.println("Plantao no hospita..: " + Hospital);
          System.out.println("Medico que realizou...: " + medicoRealizou);
@@ -28,9 +28,12 @@ public class plantoesI {
 }
         
 
-    private boolean Plantoes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   public void listar() {
+        for (int i = 0; i < plantao.length; i++) {
+            if (plantao[i] != null) {
+                System.out.println(plantao[i]);
+            }
+        }
     }
-        
     
 }
