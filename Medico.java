@@ -117,6 +117,14 @@ public class Medico {
         public void DataModificacao(LocalDate dataModificacao) {
             this.dataModificacao = dataModificacao;
         }
+    
+         public double getSalarioM () {
+            return salario;
+        }
+        
+        public void setSalarioM (double SalarioM) {
+            this.salario = SalarioM;
+        } 
         
 
          @Override
@@ -127,6 +135,7 @@ public class Medico {
               "\nEspecialização: " + this.espec +
               "\nEndereço: " + this.endereco +
               "\nTelefone: " + this.Tel +
+              "nSalario: " + this.salario +
               "\nLogin: " + this.login +
               "\nSenha: " + this.senha +
               "\nCriado em: " + this.dataCriacao;
