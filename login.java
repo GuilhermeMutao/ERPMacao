@@ -16,30 +16,59 @@ public class login {
     Scanner s = new Scanner(System.in);
     AdministradorDAO administradorDAO = new AdministradorDAO();
      
-     public login(){
-     int opcaoLogin = 10;
-        while (opcaoLogin != 0){
-        
-            opcaoLogin = this.login();
-            
-            switch (opcaoLogin) {
-                case 1:
-                         boolean testeUsuario = true;
-                String adm;
-                do{
-                    if (testeUsuario == true){
-                        System.out.print(" Usuário: ");
-                        adm = s.nextLine();
-                        testeUsuario = administradorDAO.buscaPorLogin(adm);
-                    }else{
-                        System.out.println(" Usuário inexistente.");
-                        System.out.print(" Usuário: ");
-                        adm = s.nextLine();
-                        testeUsuario = administradorDAO.buscaPorLogin(adm);
+        public login(){
+        int opcaoLogin = 10;
+           while (opcaoLogin != 0){
 
+               opcaoLogin = this.login();
+
+               switch (opcaoLogin) {
+                   case 1:
+                            boolean testeUsuario = true;
+                   String adm;
+                   do{
+                       if (testeUsuario == true){
+                           System.out.print("Admnistrador: ");
+                           adm = s.nextLine();
+                           testeUsuario = administradorDAO.buscaPorLogin(adm);
+                       }else{
+                           System.out.println("Admnistrador não encontrado.");
+                           System.out.print("Admnistrador: ");
+                           adm = s.nextLine();
+                           testeUsuario = administradorDAO.buscaPorLogin(adm);
+
+                       }
+           }while(testeUsuario != true);
+             int idConectado = -2;
+        int tentativa = 3;
+        String senha;
+        do{
+            if (idConectado == -2){
+                System.out.print("Senha: ");
+                senha = s.nextLine();
+                idConectado = administradorDAO.buscaSenhaPorLogin(adm,senha);
+            }else{
+                do{
+                    tentativa --;
+                    if (tentativa < 3){
+                        System.out.println("Senha incorreta. Você tem mais " + tentativa + " tentativa(s)!");
+                        System.out.print("Senha: ");
+                        senha = s.nextLine();
+                        idConectado = administradorDAO.buscaSenhaPorLogin(adm,senha);
+                    }else{
+                        System.out.println("Senha incorreta 3ª tentativa.\n\n Sistema Finalizado.");
+                        System.exit(0);
                     }
-        }while(testeUsuario != true);
-                    new Menu();
+                }while(idConectado < 0);
+
+            }
+        }while(idConectado < 0);        
+
+       
+                
+                new Menu();
+                    
+            
                     
                 break;
                 
@@ -69,6 +98,7 @@ public class login {
         System.out.println("|2- Médico                 |");
         System.out.println("|Digite sua opção          |");
         System.out.println("============================");
+        System.out.print("Informe seu login: ");
         Scanner scanner = new Scanner(System.in);
         int  opcao = Integer.parseInt(scanner.nextLine());
         return opcao;

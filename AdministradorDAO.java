@@ -66,6 +66,15 @@ public class AdministradorDAO {
         }
         return false;
     }
+     
+    public int buscaSenhaPorLogin(String login, String senha){
+        for (int i = 0; i < administradores.length; i++) {
+            if (administradores[i] != null && administradores[i].getLogin().equals(login) && administradores[i].getSenha().equals(senha)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
 
 
