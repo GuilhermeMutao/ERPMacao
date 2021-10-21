@@ -20,6 +20,7 @@ public class MedicoDAO {
     m1.setNome("Ana Laura Bahia Mutão");
     m1.setCPF("020.271.908-32");
     m1.setEspec("Psicanalista");
+    m1.setSalarioM(500);
     m1.setEndereco("Rua 8 casa 27, Condominio Dhamma II");
     m1.setTelefone("(00)98765-4321");
     m1.setLogin("AnaBahia");
