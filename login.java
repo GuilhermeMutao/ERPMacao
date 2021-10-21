@@ -14,6 +14,7 @@ import trab.Menu;
 public class login {
     
     Scanner s = new Scanner(System.in);
+    AdministradorDAO administradorDAO = new AdministradorDAO();
      
      public login(){
      int opcaoLogin = 10;
@@ -23,11 +24,21 @@ public class login {
             
             switch (opcaoLogin) {
                 case 1:
-                    System.out.println("Informe seu login:");
-                    String loginaux = s.nextLine();
-                    System.out.println("Informe sua senha:");
-                    String senhaaux = s.nextLine();
-                    System.out.println("Bem vindo " + loginaux + "!");
+                         boolean testeUsuario = true;
+                String adm;
+                do{
+                    if (testeUsuario == true){
+                        System.out.print(" Usuário: ");
+                        adm = s.nextLine();
+                        testeUsuario = administradorDAO.buscaPorLogin(adm);
+                    }else{
+                        System.out.println(" Usuário inexistente.");
+                        System.out.print(" Usuário: ");
+                        adm = s.nextLine();
+                        testeUsuario = administradorDAO.buscaPorLogin(adm);
+
+                    }
+        }while(testeUsuario != true);
                     new Menu();
                     
                 break;

@@ -57,6 +57,15 @@ public class AdministradorDAO {
             }
         }
     }
+     
+     public boolean buscaPorLogin(String login) {
+        for (Administrador adm : administradores) {
+            if (adm != null && adm.getLogin().equals(login)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 
