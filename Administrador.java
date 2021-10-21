@@ -91,7 +91,8 @@ public class Administrador {
 
     @Override
     public String toString() {
-        return "\nAdministrador(a): " + this.nome + 
+        return  "\nID: " + this.id + 
+                "\nAdministrador(a): " + this.nome + 
                 "\nCPF: " + this.CPF + 
                 "\nEndereço: " + this.endereco +
                 "\nLogin: " + this.login +
@@ -123,4 +124,13 @@ public class Administrador {
         }
         return true;
     }   
+    
+    public boolean buscaPorLogin(String login) {
+        for (Administrador adm : Administrador) {
+            if (adm != null && adm.getLogin().equals(login)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

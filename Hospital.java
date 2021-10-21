@@ -68,7 +68,7 @@ public class Hospital {
             this.Tel = Tel;
         }
          
-          public String getEndereco (String endereco) {
+          public String getEndereco () {
              return endereco;
          }
           public void setEndereco (String endereco) {
@@ -104,7 +104,8 @@ public class Hospital {
 
          @Override
     public String toString() {
-       return "\nHospital: " + this.nome + 
+       return "\nID: " + this.id +
+              "\nHospital: " + this.nome + 
               "\nAbreviação: " + this.abrv + 
               "\nCidade: " + this.cidade +
               "\nCNPJ: " + this.CNPJ +
