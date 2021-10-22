@@ -15,6 +15,7 @@ public class login {
     
     Scanner s = new Scanner(System.in);
     AdministradorDAO administradorDAO = new AdministradorDAO();
+    MedicoDAO medicoDAO = new MedicoDAO();
      
         public login(){
         int opcaoLogin = 10;
@@ -63,23 +64,52 @@ public class login {
 
             }
         }while(idConectado < 0);        
-
-       
-                
-                new Menu();
-                    
-            
-                    
-                break;
+                 
+            new Menu();
+            break;
                 
                 case 2:
-                    System.out.println("Informe seu Login:");
-                    String loginaux2 = s.nextLine();
-                    System.out.println("Informe sua senha:");
-                    String senhaaux2 = s.nextLine();
-                    System.out.println("Bem vindo " + loginaux2 + "!");
-                    new MenuMedico();
-     
+                      boolean testeUsuarioM = true;
+                   String mdc;
+                   do{
+                       if (testeUsuarioM == true){
+                           System.out.print("Médico: ");
+                           mdc = s.nextLine();
+                           testeUsuarioM = medicoDAO.buscaPorLogin(mdc);
+                       }else{
+                           System.out.println("Médico não encontrado.");
+                           System.out.print("Médico: ");
+                           mdc = s.nextLine();
+                           testeUsuarioM = medicoDAO.buscaPorLogin(mdc);
+
+                       }
+           }while(testeUsuarioM != true);
+             int idConectadoM = -2;
+                int tentativaM = 3;
+                String senhaM;
+                do{
+                    if (idConectadoM == -2){
+                        System.out.print("Senha: ");
+                        senhaM = s.nextLine();
+                        idConectadoM = medicoDAO.buscaSenhaPorLogin(mdc,senhaM);
+                    }else{
+                        do{
+                            tentativaM --;
+                            if (tentativaM < 3){
+                                System.out.println("Senha incorreta. Você tem mais " + tentativaM + " tentativa(s)!");
+                                System.out.print("Senha: ");
+                                senhaM = s.nextLine();
+                                idConectadoM = medicoDAO.buscaSenhaPorLogin(mdc,senhaM);
+                            }else{
+                                System.out.println("Senha incorreta 3ª tentativa.\n\n Sistema Finalizado.");
+                                System.exit(0);
+                            }
+                        }while(idConectadoM < 0);
+
+                    }
+                }while(idConectadoM < 0);        
+                 
+                new MenuMedico();
                 break;
                 
                

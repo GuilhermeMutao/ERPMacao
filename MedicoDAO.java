@@ -60,4 +60,22 @@ public class MedicoDAO {
             }
         }
     }
+    
+    public boolean buscaPorLogin(String login) {
+        for (Medico mdc : medicos) {
+            if (mdc != null && mdc.getLogin().equals(login)) {
+                return true;
+            }
+        }
+        return false;
+    }
+     
+    public int buscaSenhaPorLogin(String login, String senha){
+        for (int i = 0; i < medicos.length; i++) {
+            if (medicos[i] != null && medicos[i].getLogin().equals(login) && medicos[i].getSenha().equals(senha)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

@@ -25,6 +25,7 @@ public class Medico {
         private String espec;
         private String login;
         private String senha;
+        private double salario;
         private LocalDate dataCriacao;
         private LocalDate dataModificacao;
         
@@ -49,7 +50,7 @@ public class Medico {
          
          
          
-          public String getEndereco (String endereco) {
+          public String getEndereco () {
              return endereco;
          }
           public void setEndereco (String endereco) {
@@ -58,7 +59,7 @@ public class Medico {
 
           
           
-        public String getCPF(String CPF) {
+        public String getCPF() {
         return CPF;
         }
         
@@ -66,7 +67,7 @@ public class Medico {
             this.CPF = CPF;
         }
         
-        public String getTelefone (String Tel) {
+        public String getTelefone () {
             return Tel;
         }
         
@@ -76,7 +77,7 @@ public class Medico {
         
         
         
-        public String getEspec (String Espec) {
+        public String getEspec () {
             return espec;
         }
         
@@ -85,7 +86,7 @@ public class Medico {
         }
         
         
-        public String getLogin (String login) {
+        public String getLogin () {
             return login;
         }
         
@@ -94,7 +95,7 @@ public class Medico {
         }
         
         
-        public String getSenha (String senha) {
+        public String getSenha () {
             return senha;
         }
         
