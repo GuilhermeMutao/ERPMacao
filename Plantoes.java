@@ -16,7 +16,7 @@ public class Plantoes {
         private String dataI;
         private String dataT;
         private String periodo;
-        private String tipoPlantao;
+        String tipoPlantao;
         private String medicoAlocado;
         private String medicoRealizou;
         private double valorB;
