@@ -14,6 +14,7 @@ import java.time.LocalDate;
 public class MedicoDAO {
      
     Medico [] medicos = new Medico[5];
+     MultiplicadorDAO multiplicador = new MultiplicadorDAO ();
     
     public MedicoDAO() {
     Medico m1 = new Medico();
@@ -25,6 +26,38 @@ public class MedicoDAO {
     m1.setTelefone("(00)98765-4321");
     m1.setLogin("AnaBahia");
     m1.setSenha("mutaolindo");
+         if (Plantoes.tipoPlantao == "PS") {
+         m1.setSalarioM(500);
+    }
+    else {
+        if (Plantoes.tipoPlantao == "PS FDS") {
+            m1.setSalarioM(500 * 1.2 * 1.5 );
+        }
+        else {
+            if (Plantoes.tipoPlantao == "UTI GERAL" ) {
+                m1.setSalarioM(500 * 1.3 * 1.5);
+            }
+            else {
+                if (Plantoes.tipoPlantao == "UTI GERAL FDS") {
+                    m1.setSalarioM(500 * 1.4 * 1.5);
+                }
+                else {
+                    if (Plantoes.tipoPlantao == ("UTI COVID")) {
+                        m1.setSalarioM(500 * 1.5 * 1.5);
+                    }
+                    else {
+                        if (Plantoes.tipoPlantao == "UTI COVID FDS") {
+                            m1.setSalarioM(500 * 1.6 * 1.5);
+                        }
+                        else
+                        {
+                            m1.setSalarioM(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
         this.adiciona(m1);
         
     m1.setDataCriacao(LocalDate.now());
