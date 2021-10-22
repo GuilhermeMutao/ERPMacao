@@ -100,13 +100,9 @@ public class MenuMedico {
     }
     
     public Plantoes CadastroPlantoes() {
-        
-        
-        
+               
         Plantoes p = new Plantoes();
-        
-        
-  
+                
         System.out.println("Digite o nome do hospital: ");
         p.setHospital(s.nextLine());
         

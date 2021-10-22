@@ -37,7 +37,6 @@ public class login {
                            System.out.print("Admnistrador: ");
                            adm = s.nextLine();
                            testeUsuario = administradorDAO.buscaPorLogin(adm);
-
                        }
            }while(testeUsuario != true);
              int idConectado = -2;
@@ -57,7 +56,7 @@ public class login {
                         senha = s.nextLine();
                         idConectado = administradorDAO.buscaSenhaPorLogin(adm,senha);
                     }else{
-                        System.out.println("Senha incorreta 3ª tentativa.\n\n Sistema Finalizado.");
+                        System.out.println("Senha incorreta 3ª tentativa.\n\n ...Sistema Encerrado.");
                         System.exit(0);
                     }
                 }while(idConectado < 0);
@@ -101,7 +100,7 @@ public class login {
                                 senhaM = s.nextLine();
                                 idConectadoM = medicoDAO.buscaSenhaPorLogin(mdc,senhaM);
                             }else{
-                                System.out.println("Senha incorreta 3ª tentativa.\n\n Sistema Finalizado.");
+                                System.out.println("Senha incorreta.\n\n ...Sistema Encerrado.");
                                 System.exit(0);
                             }
                         }while(idConectadoM < 0);
@@ -111,8 +110,7 @@ public class login {
                  
                 new MenuMedico();
                 break;
-                
-               
+                               
             }
         }
     }

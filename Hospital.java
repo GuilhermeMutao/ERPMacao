@@ -25,7 +25,6 @@ public class Hospital {
         private LocalDate dataModificacao;
         
         public Hospital () {
-            
             id = (int) Hospital.serial++;
         }
         

@@ -47,9 +47,7 @@ public class Medico {
          public void setNome(String nome) {
          this.nome = nome;
          }
-         
-         
-         
+
           public String getEndereco () {
              return endereco;
          }
@@ -57,8 +55,7 @@ public class Medico {
               this.endereco = endereco;
           }
 
-          
-          
+     
         public String getCPF() {
         return CPF;
         }
@@ -130,7 +127,8 @@ public class Medico {
 
          @Override
     public String toString() {
-       return "\nID: " + this.id +
+       return "===================================" +
+              "\nID: " + this.id +
               "\nMédico(a): " + this.nome + 
               "\nCPF: " + this.CPF +
               "\nEspecialização: " + this.espec +
