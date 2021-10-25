@@ -117,8 +117,7 @@ public class MenuMedico {
         
         System.out.println("Digite um tipo de plantao: ");
         p.setTipo(s.nextLine());
-        
-        
+            
         return p;
     }
 }
