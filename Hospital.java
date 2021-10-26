@@ -6,7 +6,7 @@
 
 import java.time.LocalDate;
 import java.util.Objects;
-.
+
 /**
  *
  * @author Matheus
@@ -23,6 +23,7 @@ public class Hospital {
         private String Tel;
         private LocalDate dataCriacao;
         private LocalDate dataModificacao;
+         double gastos;
         
         public Hospital () {
             id = (int) Hospital.serial++;
@@ -87,19 +88,27 @@ public class Hospital {
         
          public LocalDate getDataCriacao() {
         return dataCriacao;
-    }
+         }
 
-    public void setDataCriacao(LocalDate dataCriacao) {
-        this.dataCriacao = dataCriacao;
-    }
+        public void setDataCriacao(LocalDate dataCriacao) {
+            this.dataCriacao = dataCriacao;
+        }
 
-    public LocalDate getDataModificacao() {
-        return dataModificacao;
-    }
+        public LocalDate getDataModificacao() {
+            return dataModificacao;
+        }
 
-    public void DataModificacao(LocalDate telefoneCelular) {
-        this.dataModificacao = telefoneCelular;
-    }
+        public void DataModificacao(LocalDate dataModificacao) {
+            this.dataModificacao = dataModificacao;
+        }
+
+        public double getGastos () {
+            return gastos;
+        }
+
+        public void setGastos (double Gastos) {
+            this.gastos = Gastos;
+        }
 
          @Override
     public String toString() {
