@@ -15,7 +15,7 @@ import java.util.Date;
 public class AdministradorDAO {
     
     
-    Administrador[] administradores = new Administrador[5];
+    public Administrador[] administradores = new Administrador[5];
     
     public AdministradorDAO() {
     Administrador a1 = new Administrador();
@@ -75,6 +75,18 @@ public class AdministradorDAO {
         }
         return -1;
     }
-}
+        public boolean remover(String nome) {
+        for (int i = 0; i < administradores.length; i++) {
+            if (administradores[i] != null && administradores[i].getNome().equals(nome)) {
+                administradores[i] = null;
+                return true;
+            }
+        }
+        return false;
+
+    }
+    
+} 
+   
 
 

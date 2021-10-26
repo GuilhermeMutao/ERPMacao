@@ -19,7 +19,7 @@ public class MedicoDAO {
     
     public MedicoDAO() {
     Medico m1 = new Medico();
-    m1.setNome("Ana Laura Bahia MutÃ£o");
+    m1.setNome("Ana");
     m1.setCPF("020.271.908-32");
     m1.setEspec("Psicanalista");
     m1.setEndereco("Rua 8 casa 27, Condominio Dhamma II");
@@ -110,5 +110,15 @@ public class MedicoDAO {
             }
         }
         return -1;
+    }
+    
+    public boolean remover(String nome) {
+        for (int i = 0; i < medicos.length; i++) {
+            if (medicos[i] != null && medicos[i].getNome().equals(nome)) {
+                medicos[i] = null;
+                return true;
+            }
+        }
+        return false;
     }
 }

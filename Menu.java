@@ -24,12 +24,14 @@ public class Menu {
    MedicoDAO medicoDAO = new MedicoDAO();
    HospitalDAO hospitalDAO = new HospitalDAO();
    CadastroPlantoesDAO cadastroPlantoesDAO = new CadastroPlantoesDAO();
+
+   
    
    Scanner s = new Scanner(System.in);
     
    
    public Menu(){
-     int opcaoMenu = 10;
+     int opcaoMenu = 100;
         while (opcaoMenu != 0) {
             
         
@@ -89,6 +91,39 @@ public class Menu {
                 case 8:
                     cadastroPlantoesDAO.listar();
                    break;
+                   
+                case 9:
+                    
+                    administradorDAO.listar();
+                    
+                    System.out.println("Admnistrador procurado:");
+                    String nomeExclusao = s.nextLine();
+
+                    if (administradorDAO.remover(nomeExclusao) && !"Macao".equals(nomeExclusao)) {
+                        System.out.println("administrador excluído");
+                    } else {
+                        System.out.println("administrador não excluído");
+                    }
+
+                    
+                    break;
+                    
+                case 10:
+                    
+                    medicoDAO.listar();
+                    
+                    System.out.println("Médico procurado: ");
+                    String nomeExclusaoMedico = s.nextLine();
+
+                    if (medicoDAO.remover(nomeExclusaoMedico) ) {
+                        System.out.println("médico excluído");
+                    } else {
+                        System.out.println("médico não excluído");
+                    }
+
+                    
+                    break;
+     
             }
           }
    }
@@ -109,7 +144,9 @@ public class Menu {
         System.out.println("5 - Listar médicos");
         System.out.println("6 - Listar hospitais");
         System.out.println("7 - Cadastrar plantão");
-        System.out.println("8 - Listar Plantões");
+        System.out.println("8 - Listar administrador");
+        System.out.println("9 - Remover administrador");
+        System.out.println("10 - Remover médico");
         System.out.println("0 - Sair");
         System.out.print("Qual Sua opção ? R: ");
         Scanner scanner = new Scanner(System.in);
@@ -225,7 +262,11 @@ public class Menu {
         return p;
     }
     
+ 
+    
+
 }
+
     
 
 
