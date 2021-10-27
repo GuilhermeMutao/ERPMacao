@@ -61,8 +61,8 @@ public class Administrador {
         return dataModificacao;
     }
 
-    public void DataModificacao(LocalDate telefoneCelular) {
-        this.dataModificacao = telefoneCelular;
+    public void setDataModificacao(LocalDate dataModificacao) {
+        this.dataModificacao = dataModificacao;
     }
 
     public String getEndereco() {
@@ -98,7 +98,8 @@ public class Administrador {
                 "\nEndereço: " + this.endereco +
                 "\nLogin: " + this.login +
                 "\nSenha: " + this.senha +
-                "\nCriado em: " + this.dataCriacao;
+                "\nCriado em: " + this.dataCriacao +
+                "  Modificado em: " + this.dataModificacao;
     }
 
     @Override

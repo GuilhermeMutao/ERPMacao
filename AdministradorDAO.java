@@ -25,6 +25,7 @@ public class AdministradorDAO {
     a1.setLogin("Macao");
     a1.setSenha("macao123");
     a1.setDataCriacao(LocalDate.now());
+    a1.setDataModificacao(LocalDate.now());
         this.adiciona(a1);
     }
     
@@ -75,17 +76,37 @@ public class AdministradorDAO {
         }
         return -1;
     }
-        public boolean remover(String nome) {
+    public boolean exclui(long idASerExcluido) {
         for (int i = 0; i < administradores.length; i++) {
-            if (administradores[i] != null && administradores[i].getNome().equals(nome)) {
+
+            if (administradores[i].getId() == idASerExcluido) {
                 administradores[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean altera(long idASerAlterado, String novoNome, String novoCPF, String novoLogin, String novaSenha, String novoEndereco, LocalDate dataModificacao) {
+        for (int i = 0; i < administradores.length; i++) {
+
+            if (administradores[i].getId() == idASerAlterado) {
+                administradores[i].setNome(novoNome);
+                administradores[i].setCPF(novoCPF);
+                administradores[i].setLogin(novoLogin);
+                administradores[i].setSenha(novaSenha);
+                administradores[i].setEndereco(novoEndereco);
+                administradores[i].setDataModificacao(dataModificacao);
                 return true;
             }
         }
         return false;
 
     }
-    
+
+    boolean altera(long idASerAlterado, String novoNome) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 } 
    
 

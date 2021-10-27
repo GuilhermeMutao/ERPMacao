@@ -96,15 +96,13 @@ public class Menu {
                     
                     administradorDAO.listar();
                     
-                    System.out.println("Admnistrador procurado:");
-                    String nomeExclusao = s.nextLine();
+                    long idASerExcluido = menuExclusaoPessoa();
 
-                    if (administradorDAO.remover(nomeExclusao) && !"Macao".equals(nomeExclusao)) {
-                        System.out.println("administrador excluído");
+                    if (administradorDAO.exclui(idASerExcluido) && idASerExcluido != 0) {
+                        System.out.println("Excluido com sucesso");
                     } else {
-                        System.out.println("administrador não excluído");
+                        System.out.println("Não foi excluido");
                     }
-
                     
                     break;
                     
@@ -112,19 +110,19 @@ public class Menu {
                     
                     medicoDAO.listar();
                     
-                    System.out.println("Médico procurado: ");
-                    String nomeExclusaoMedico = s.nextLine();
+                    long idASerExcluidoM = menuExclusaoPessoa();
 
-                    if (medicoDAO.remover(nomeExclusaoMedico) ) {
-                        System.out.println("médico excluído");
+                    if (medicoDAO.exclui(idASerExcluidoM) && idASerExcluidoM != 0) {
+                        System.out.println("Excluido com sucesso");
                     } else {
-                        System.out.println("médico não excluído");
+                        System.out.println("Não foi excluido");
                     }
-
                     
                     break;
+                             
+  
      
-            }
+            }   
           }
    }
 
@@ -237,7 +235,7 @@ public class Menu {
     
     public Plantoes CadastroPlantoes() {
         
-        
+
         
         Plantoes p = new Plantoes();
         
@@ -263,8 +261,17 @@ public class Menu {
     }
     
  
-    
-
+     private long menuExclusaoPessoa() {
+        System.out.print("qual administrador deseja excluir: ");
+        long idASerExcluido = Long.parseLong(s.nextLine());
+        return idASerExcluido;
+    }
+     
+     private long menuAlteracaoPessoa() {
+        System.out.println("qual admnistrador deseja alterar: ");
+        long idASerAlterado = Long.parseLong(s.nextLine());
+        return idASerAlterado;
+    }
 }
 
     
