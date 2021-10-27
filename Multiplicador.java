@@ -24,7 +24,7 @@ public class Multiplicador {
          private Date dataM;
          
          
-         public Multiplicador () {
+        public Multiplicador () {
             
             id = (int) Multiplicador.serial++;
         }

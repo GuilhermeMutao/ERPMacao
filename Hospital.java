@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class Hospital {
     
-            private static long serial;
+        private static long serial;
         private int id;
         private String nome;
         private String abrv;
@@ -111,41 +111,41 @@ public class Hospital {
         }
 
          @Override
-    public String toString() {
-       return "\nID: " + this.id +
-              "\nHospital: " + this.nome + 
-              "\nAbreviação: " + this.abrv + 
-              "\nCidade: " + this.cidade +
-              "\nCNPJ: " + this.CNPJ +
-              "\nTel: " + this.Tel +
-              "\nEnderaço: " + this.Tel +
-              "\nCriado em: " + this.dataCriacao;
-    }
+        public String toString() {
+           return "\nID: " + this.id +
+                  "\nHospital: " + this.nome + 
+                  "\nAbreviação: " + this.abrv + 
+                  "\nCidade: " + this.cidade +
+                  "\nCNPJ: " + this.CNPJ +
+                  "\nTel: " + this.Tel +
+                  "\nEnderaço: " + this.Tel +
+                  "\nCriado em: " + this.dataCriacao;
+        }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + Objects.hashCode(this.CNPJ);
-        return hash;
-    }
+        @Override
+        public int hashCode() {
+            int hash = 7;
+            hash = 83 * hash + Objects.hashCode(this.CNPJ);
+            return hash;
+        }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Hospital other = (Hospital) obj;
+            if (!Objects.equals(this.CNPJ, other.CNPJ)) {
+                return false;
+            }
             return true;
         }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Hospital other = (Hospital) obj;
-        if (!Objects.equals(this.CNPJ, other.CNPJ)) {
-            return false;
-        }
-        return true;
-    }
     
     
 }
