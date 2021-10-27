@@ -54,4 +54,27 @@ public class HospitalDAO {
             }
         }
     }
+    
+    public boolean exclui(long idASerExcluido) {
+        for (int i = 0; i < hospitais.length; i++) {
+
+            if (hospitais[i].getId() == idASerExcluido) {
+                hospitais[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean altera(long idASerAlterado, String novoNome) {
+        for (int i = 0; i < hospitais.length; i++) {
+
+            if (hospitais[i].getId() == idASerAlterado) {
+                hospitais[i].setNome(novoNome);
+               
+                return true;
+            }
+        }
+        return false;
+    }
 }

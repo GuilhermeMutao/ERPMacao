@@ -96,7 +96,7 @@ public class Menu {
                     
                     administradorDAO.listar();
                     
-                    long idASerExcluido = menuExclusaoPessoa();
+                    long idASerExcluido = menuExclusao();
 
                     if (administradorDAO.exclui(idASerExcluido) && idASerExcluido != 0) {
                         System.out.println("Excluido com sucesso");
@@ -110,7 +110,7 @@ public class Menu {
                     
                     medicoDAO.listar();
                     
-                    long idASerExcluidoM = menuExclusaoPessoa();
+                    long idASerExcluidoM = menuExclusao();
 
                     if (medicoDAO.exclui(idASerExcluidoM) && idASerExcluidoM != 0) {
                         System.out.println("Excluido com sucesso");
@@ -119,8 +119,63 @@ public class Menu {
                     }
                     
                     break;
-                             
-  
+                    
+                    
+                case 11:
+                    
+                    hospitalDAO.listar();
+                    
+                    long idASerExcluidoH = menuExclusao();
+
+                    if (hospitalDAO.exclui(idASerExcluidoH) && idASerExcluidoH != 0) {
+                        System.out.println("Excluido com sucesso");
+                    } else {
+                        System.out.println("Não foi excluido");
+                    }
+                    
+                    break;
+                
+                case 12:
+                    administradorDAO.listar();
+                    long idASerAlterado = menuAlteracao();
+                    System.out.println("Qual é o novo nome ?");
+                    String novoNome = s.nextLine();
+                    
+
+                    if (administradorDAO.altera(idASerAlterado, novoNome)) {
+                        System.out.println("pessoa alterada com sucesso");
+                    } else {
+                        System.out.println("pessoa não encontrada");
+                    }
+                    break;
+                    
+                case 13:
+                    medicoDAO.listar();
+                    long idASerAlteradoM = menuAlteracao();
+                    System.out.println("Qual é o novo nome ?");
+                    String novoNomeM = s.nextLine();
+                    
+
+                    if (medicoDAO.altera(idASerAlteradoM, novoNomeM)) {
+                        System.out.println("pessoa alterada com sucesso");
+                    } else {
+                        System.out.println("pessoa não encontrada");
+                    }
+                    break;
+                    
+                case 14:
+                    hospitalDAO.listar();
+                    long idASerAlteradoH = menuAlteracao();
+                    System.out.println("Qual é o novo nome ?");
+                    String novoNomeH = s.nextLine();
+                    
+
+                    if (hospitalDAO.altera(idASerAlteradoH, novoNomeH)) {
+                        System.out.println("pessoa alterada com sucesso");
+                    } else {
+                        System.out.println("pessoa não encontrada");
+                    }
+                    break;
      
             }   
           }
@@ -131,9 +186,9 @@ public class Menu {
     } 
     
     private int menu(){
-        System.out.println("=========================================");
-        System.out.println(" ERP PARA HOSPITAIS MACÃO - Admnistrador" );
-        System.out.println("=========================================");
+        System.out.println("==================================================================================");
+        System.out.println("                        ERP PARA HOSPITAIS MACÃO - Admnistrador" );
+        System.out.println("==================================================================================");
         System.out.println("Escolha um: ");
         System.out.println("1 - Cadastrar administrador");
         System.out.println("2 - Cadastrar médico");
@@ -145,6 +200,10 @@ public class Menu {
         System.out.println("8 - Listar administrador");
         System.out.println("9 - Remover administrador");
         System.out.println("10 - Remover médico");
+        System.out.println("11 - Remover hospital");
+        System.out.println("12 - Alterar admnistrador");
+        System.out.println("13 - Alterar medico");
+        System.out.println("14 - Alterar hospital");
         System.out.println("0 - Sair");
         System.out.print("Qual Sua opção ? R: ");
         Scanner scanner = new Scanner(System.in);
@@ -261,13 +320,13 @@ public class Menu {
     }
     
  
-     private long menuExclusaoPessoa() {
+     private long menuExclusao() {
         System.out.print("qual administrador deseja excluir: ");
         long idASerExcluido = Long.parseLong(s.nextLine());
         return idASerExcluido;
     }
      
-     private long menuAlteracaoPessoa() {
+     private long menuAlteracao() {
         System.out.println("qual admnistrador deseja alterar: ");
         long idASerAlterado = Long.parseLong(s.nextLine());
         return idASerAlterado;

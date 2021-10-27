@@ -27,7 +27,19 @@ public class AdministradorDAO {
     a1.setDataCriacao(LocalDate.now());
     a1.setDataModificacao(LocalDate.now());
         this.adiciona(a1);
+        
+    Administrador a2 = new Administrador();
+    a2.setNome("Mucedo");
+    a2.setCPF("000.000.000-00");
+    a2.setEndereco("Rua Macao 228, Bairro Macão");
+    a2.setLogin("Mucedo");
+    a2.setSenha("mucedo123");
+    a2.setDataCriacao(LocalDate.now());
+    a2.setDataModificacao(LocalDate.now());
+        this.adiciona(a2);
+    
     }
+    
     
      
     boolean adiciona(Administrador a) {
@@ -87,16 +99,12 @@ public class AdministradorDAO {
         return false;
     }
     
-    public boolean altera(long idASerAlterado, String novoNome, String novoCPF, String novoLogin, String novaSenha, String novoEndereco, LocalDate dataModificacao) {
+    public boolean altera(long idASerAlterado, String novoNome) {
         for (int i = 0; i < administradores.length; i++) {
 
             if (administradores[i].getId() == idASerAlterado) {
                 administradores[i].setNome(novoNome);
-                administradores[i].setCPF(novoCPF);
-                administradores[i].setLogin(novoLogin);
-                administradores[i].setSenha(novaSenha);
-                administradores[i].setEndereco(novoEndereco);
-                administradores[i].setDataModificacao(dataModificacao);
+               
                 return true;
             }
         }
@@ -104,9 +112,8 @@ public class AdministradorDAO {
 
     }
 
-    boolean altera(long idASerAlterado, String novoNome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
+
 } 
    
 

@@ -25,7 +25,7 @@ public class Medico {
         private String espec;
         private String login;
         private String senha;
-        private double salario;
+        double salario;
         private LocalDate dataCriacao;
         private LocalDate dataModificacao;
         
@@ -112,7 +112,7 @@ public class Medico {
             return dataModificacao;
         }
 
-        public void DataModificacao(LocalDate dataModificacao) {
+        public void setDataModificacao(LocalDate dataModificacao) {
             this.dataModificacao = dataModificacao;
         }
     
@@ -137,7 +137,8 @@ public class Medico {
               "nSalario: " + this.salario +
               "\nLogin: " + this.login +
               "\nSenha: " + this.senha +
-              "\nCriado em: " + this.dataCriacao;
+              "\nCriado em: " + this.dataCriacao +
+              "  Modificado em: " + this.dataModificacao;
     }
 
     @Override

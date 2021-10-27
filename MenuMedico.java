@@ -44,9 +44,9 @@ public class MenuMedico {
           }
    }
     private int menu(){
-        System.out.println("===================================");
-        System.out.println(" ERP PARA HOSPITAIS MACÃO - Médico");
-        System.out.println("===================================");
+        System.out.println("==================================================================================");
+        System.out.println("                    ERP PARA HOSPITAIS MACÃO - Médico");
+        System.out.println("==================================================================================");
         System.out.println("Escolha um: ");
         System.out.println("1 - Cadastrar plantão");
         System.out.println("2 - Listar Plantões");

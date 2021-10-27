@@ -17,9 +17,10 @@ public class Relatorio {
         Hospital hospital = new Hospital();
         Plantoes plantao = new Plantoes();
         
+        System.out.println("==============================");
         System.out.println("           RELATORIO        ");
-        System.out.println("============================");
-        System.out.println("O médico " + medico.getNome());
+        System.out.println("==============================");
+        System.out.println("O(a) médico(a) " + medico.getNome());
         System.out.println("Trabalhou no hospital" + hospital.getNome() + "Por 12 horas"
             + "No turno da " + plantao.getPeriodo());
         System.out.println("Fazendo plantao do tipo: " + plantao.getTipo());

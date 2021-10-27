@@ -22,7 +22,7 @@ public class MedicoDAO {
         Hospital hospital = new Hospital();
        
     Medico m1 = new Medico();
-    m1.setNome("Ana");
+    m1.setNome("Ana Laura Bahia Mutão");
     m1.setCPF("020.271.908-32");
     m1.setEspec("Psicanalista");
     m1.setEndereco("Rua 8 casa 27, Condominio Dhamma II");
@@ -75,6 +75,7 @@ public class MedicoDAO {
         
    
     m1.setDataCriacao(LocalDate.now());
+    m1.setDataModificacao(LocalDate.now());
     }
 
     
@@ -126,13 +127,27 @@ public class MedicoDAO {
         return -1;
     }
     
-    public boolean remover(String nome) {
+   public boolean exclui(long idASerExcluido) {
         for (int i = 0; i < medicos.length; i++) {
-            if (medicos[i] != null && medicos[i].getNome().equals(nome)) {
+
+            if (medicos[i].getId() == idASerExcluido) {
                 medicos[i] = null;
                 return true;
             }
         }
         return false;
+    }
+   
+   public boolean altera(long idASerAlterado, String novoNome) {
+        for (int i = 0; i < medicos.length; i++) {
+
+            if (medicos[i].getId() == idASerAlterado) {
+                medicos[i].setNome(novoNome);
+               
+                return true;
+            }
+        }
+        return false;
+
     }
 }
