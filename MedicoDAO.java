@@ -17,7 +17,10 @@ public class MedicoDAO {
     Plantoes Plantoes = new Plantoes();
     MultiplicadorDAO multiplicador = new MultiplicadorDAO ();
     
+    
     public MedicoDAO() {
+        Hospital hospital = new Hospital();
+       
     Medico m1 = new Medico();
     m1.setNome("Ana");
     m1.setCPF("020.271.908-32");
@@ -25,32 +28,42 @@ public class MedicoDAO {
     m1.setEndereco("Rua 8 casa 27, Condominio Dhamma II");
     m1.setTelefone("(00)98765-4321");
     m1.setLogin("AnaBahia");
+    
     if (Plantoes.tipoPlantao == "PS") {
+        
          m1.setSalarioM(500);
+         hospital.gastos = 500.00;
     }
     else {
         if (Plantoes.tipoPlantao == "PS FDS") {
             m1.setSalarioM(500 * 1.2 * 1.5 );
+             hospital.gastos += m1.salario;
         }
         else {
             if (Plantoes.tipoPlantao == "UTI GERAL" ) {
                 m1.setSalarioM(500 * 1.3 * 1.5);
+                hospital.gastos += m1.salario;
             }
             else {
                 if (Plantoes.tipoPlantao == "UTI GERAL FDS") {
                     m1.setSalarioM(500 * 1.4 * 1.5);
+                    hospital.gastos += m1.salario;
                 }
                 else {
                     if (Plantoes.tipoPlantao == ("UTI COVID")) {
                         m1.setSalarioM(500 * 1.5 * 1.5);
+                        hospital.gastos += m1.salario;
                     }
                     else {
                         if (Plantoes.tipoPlantao == "UTI COVID FDS") {
                             m1.setSalarioM(500 * 1.6 * 1.5);
+                            hospital.gastos += m1.salario;
                         }
                         else
                         {
                             m1.setSalarioM(0);
+                            hospital.gastos += m1.salario;
+                            
                         }
                     }
                 }
@@ -60,6 +73,7 @@ public class MedicoDAO {
     m1.setSenha("mutaolindo");
         this.adiciona(m1);
         
+   
     m1.setDataCriacao(LocalDate.now());
     }
 
