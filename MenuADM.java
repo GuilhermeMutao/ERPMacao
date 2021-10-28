@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @author GuiGu
  */
 
-public class Menu {
+public class MenuADM {
    
    AdministradorDAO administradorDAO = new AdministradorDAO();
    MedicoDAO medicoDAO = new MedicoDAO();
@@ -30,7 +30,7 @@ public class Menu {
    Scanner s = new Scanner(System.in);
     
    
-   public Menu(){
+   public MenuADM(){
      int opcaoMenu = 100;
         while (opcaoMenu != 0) {
             
@@ -82,9 +82,9 @@ public class Menu {
                 case 7:
                     Plantoes p = this.CadastroPlantoes();
                     if (cadastroPlantoesDAO.adiciona(p)) {
-                        System.out.println("Admnistrador inserido com sucesso");
+                        System.out.println("Plantão inserido com sucesso");
                     } else {
-                        System.out.println("Número máximo de admnistradores inserido!");
+                        System.out.println("Número máximo de plantões inserido!");
                     }
                    break;
                    
@@ -181,9 +181,6 @@ public class Menu {
           }
    }
 
-  public static void main(String[] args){
-        new Menu();
-    } 
     
     private int menu(){
         System.out.println("==================================================================================");

@@ -5,7 +5,7 @@
  */
 package trab;
 
-import java.time.LocalDate;
+
 import java.util.Scanner;
 
 /**
@@ -57,9 +57,6 @@ public class MenuMedico {
         return opcao;
 }
     
-    public static void main(String[] args){
-        new MenuMedico();
-    } 
        
     public Plantoes CadastroPlantoes() {
                
