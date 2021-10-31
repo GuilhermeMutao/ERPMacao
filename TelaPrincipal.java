@@ -121,10 +121,9 @@ public class TelaPrincipal {
     
     public int login() {
         System.out.println("==================================================================================");
-        System.out.println("|                                   LOGIN                                        |");
+        System.out.println("|                            ERP MACÃO - LOGIN                                   |");
         System.out.println("|                             1- Admnistrador                                    |");
         System.out.println("|                                 2- Médico                                      |");
-        System.out.println("|Digite sua opção                                                                |");
         System.out.println("==================================================================================");
         System.out.print("Informe seu login: ");
         Scanner scanner = new Scanner(System.in);

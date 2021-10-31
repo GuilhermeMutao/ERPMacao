@@ -184,24 +184,24 @@ public class MenuADM {
     
     private int menu(){
         System.out.println("==================================================================================");
-        System.out.println("                        ERP PARA HOSPITAIS MACÃO - Admnistrador" );
+        System.out.println("                        ERP PARA HOSPITAIS MACÃO - Admnistrador"                   );
         System.out.println("==================================================================================");
         System.out.println("Escolha um: ");
-        System.out.println("1 - Cadastrar administrador");
-        System.out.println("2 - Cadastrar médico");
-        System.out.println("3 - Cadastrar hospital");
-        System.out.println("4 - Listar administradores");
-        System.out.println("5 - Listar médicos");
-        System.out.println("6 - Listar hospitais");
-        System.out.println("7 - Cadastrar plantão");
-        System.out.println("8 - Listar administrador");
-        System.out.println("9 - Remover administrador");
+        System.out.println("1 -  Cadastrar administrador");
+        System.out.println("2 -  Cadastrar médico");
+        System.out.println("3 -  Cadastrar hospital");
+        System.out.println("4 -  Listar administradores");
+        System.out.println("5 -  Listar médicos");
+        System.out.println("6 -  Listar hospitais");
+        System.out.println("7 -  Cadastrar plantão");
+        System.out.println("8 -  Listar plantões");
+        System.out.println("9 -  Remover administrador");
         System.out.println("10 - Remover médico");
         System.out.println("11 - Remover hospital");
         System.out.println("12 - Alterar admnistrador");
         System.out.println("13 - Alterar medico");
         System.out.println("14 - Alterar hospital");
-        System.out.println("0 - Sair");
+        System.out.println("0 -  Sair");
         System.out.print("Qual Sua opção ? R: ");
         Scanner scanner = new Scanner(System.in);
         int  opcao = Integer.parseInt(scanner.nextLine());
